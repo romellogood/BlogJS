@@ -1,0 +1,27 @@
+{
+  "name": "BlogJS",
+  "version": "0.1.0",
+  "description": "JS library to integrate a blog into any website.",
+  "main": "./dist/BlogJS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romellogood/BlogJS.git"
+  },
+  "keywords": [
+    "blog",
+    "json"
+  ],
+  "author": "Romello Goodman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romellogood/BlogJS/issues"
+  },
+  "homepage": "https://github.com/romellogood/BlogJS",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "^0.7.0"
+  }
+}
