@@ -4,9 +4,13 @@
   function define_Library(){
     var BlogJS = {};
     BlogJS.initials = {
-      "appendArticlesTo": "#articles",
+      "appendListTo": "#list-of-articles",
       "appendPostTo": "#post",
       "blogPosts": null,
+      "postTemplate": "",
+      "linkTemplate": "",
+      "postLocation": "index",
+      "listLocation": "index",
     }
     BlogJS.articlesLoaded = null;
     BlogJS.currentPost = null;
@@ -22,9 +26,9 @@
         BlogJS.articlesLoaded = Object.keys(BlogJS.initials.blogPosts).length-1;
       }
       for(var i = BlogJS.articlesLoaded; i >= 0 && i > BlogJS.articlesLoaded-amount; i--) {
-        $(BlogJS.initials.appendPostTo).append(
-          '<article><a href="index.html?posts=' +i+ '">' +BlogJS.initials.blogPosts[i].title+ '</a> \
-          <p class="date">' +BlogJS.initials.blogPosts[i].date+ '</p></article><hr>'
+        $(BlogJS.initials.appendListTo).append(
+          '<article><a href="page.html?posts=' +i+ '">' +BlogJS.initials.blogPosts[i].title+ '</a> \
+          </article><hr>'
         );
       }
       BlogJS.articlesLoaded = i;
@@ -33,8 +37,7 @@
       }
     };
     BlogJS.loadBlogPost = function(post) {
-      $(BlogJS.initials.appendPostTo).html('<p id="post-title">' +post.title+ '</p><p id=post-date>'
-        +post.date+ '</p>' +post.body);
+      $(BlogJS.initials.appendPostTo).html('<p id="post-title">' +post.title+ '</p>' +post.body);
     };
     BlogJS.loadPage = function() {
       BlogJS.currentPost = BlogJS.initials.blogPosts[BlogJS.getParameterByName('posts')];

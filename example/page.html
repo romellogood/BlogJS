@@ -1,25 +1,18 @@
-# BlogJS
-[www.romellogoodman.com/blogjs](http://www.romellogoodman.com/blogjs "BlogJS' Homepage")
-
-BlogJS A JSON Powered Blog System.
-
-Documentation is a work in progress.
-
-## Requirements
-jQuery (for now)
-
-### To use
-``` HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Link to jQuery. -->
+  <meta charset="utf-8">
+  <title>BlogJS</title>
   <script src="jquery.min.js"></script>
-  <!-- Link to your JSON object with all of your data. -->
   <script src="posts.js"></script>
-  <!-- Link to BlogJS. -->
-  <script src="BlogJS.js"></script>
+  <script src="../src/BlogJS.js"></script>
   <script>
+    window.onload = function(){
+      BlogJS.initials.blogPosts = posts;
+      BlogJS.loadPage();
+    };
+  </script>
+  <!-- <script>
     // Set your initials
     window.onload = function(){
       // Set this field equal to your JSON object.
@@ -35,17 +28,13 @@ jQuery (for now)
       // Starts the whole process.
       BlogJS.loadPage();
     };
-  </script>
+  </script> -->
 </head>
 <body>
-  <!-- Where the actual post will load -->
+  <h1>BlogJS</h1>
+  <a href="index.html"><h4>Home</h4></a>
+  <a href="https://github.com/romellogood/BlogJS" target="_blank"><h4>Github</h4></a>
+  <p>In this example I use two pages. One for the list of articles (index) and one for the posts (post)</p>
   <section id="post"></section>
-  <!-- Where the list of articles will load -->
-  <section id="list-of-articles"></section>
-  <!-- Clicking will load the next 5 articles. -->
-  <section id="load" onclick="BlogJS.loadArticleList(5)">
-    <span><p class="center">Read More</p></span>
-  </section>
 </body>
 </html>
-```
